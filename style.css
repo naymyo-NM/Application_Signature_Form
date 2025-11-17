@@ -1,0 +1,12 @@
+.terms {
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+canvas {
+  background-color: #fff;
+  touch-action: none;
+  cursor: crosshair;
+}
