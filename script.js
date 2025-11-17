@@ -107,14 +107,18 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
-// Buttons****
-document.getElementById('btnSearch').addEventListener('click', () => {
+//Filter ID
+document.getElementById('btnSearch').addEventListener('click', ()=>{
   const id = document.getElementById('appId').value.trim();
   if (!id) return showError('Application ID ထည့်ပေးပါ');
   showError('');
-  document.getElementById('terms').scrollIntoView({ behavior: 'smooth' });
-  console.log('Search clicked for:', id);
-});
+ if(id === '12345'){
+  window.location.href = 'success.html';
+ }else{
+  window.location.href = 'not-found.html'
+ }
+
+})
 
 document.getElementById('btnSubmit').addEventListener('click', () => {
   const appId = document.getElementById('appId').value.trim();
@@ -137,6 +141,7 @@ document.getElementById('btnSubmit').addEventListener('click', () => {
   alert('Form submitted (demo). Check console for payload.');
   showError('');
 });
+
 
 function showError(msg) {
   document.getElementById('error').textContent = msg || '';
