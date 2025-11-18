@@ -28,7 +28,7 @@ document.getElementById('btnSubmit').addEventListener('click', () => {
   };
 
   console.log('Submitting payload:', payload);
-  alert(`${appId} is submitted form successfully!`);
+  alert(`appId: ${appId} is submitted form successfully!`);
   showError('');
 });
 
