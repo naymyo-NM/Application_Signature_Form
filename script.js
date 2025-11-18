@@ -13,75 +13,30 @@ document.getElementById('btnSearch').addEventListener('click', ()=>{
 
 });
 
-let currentStatus = null;
-
-const btnAccept = document.getElementById('btnAccept');
-const btnDecline = document.getElementById('btnDecline');
-const termsCheckbox = document.getElementById('termsCheckbox');
-
-btnAccept.addEventListener('click', () => {
-    currentStatus = 'Accepted';
-    termsCheckbox.checked = true;
-    showError('');
-    
-   
-    btnAccept.classList.add('active', 'btn-success'); 
-    btnAccept.classList.remove('btn-outline-success')
-    btnDecline.classList.remove('active', 'btn-danger');
-    btnDecline.classList.add('btn-outline-danger')
-});
-
-btnDecline.addEventListener('click', () => {
-    currentStatus = 'Declined';
-    termsCheckbox.checked = false;
-    showError('');
-    
-    
-    btnDecline.classList.add('active', 'btn-danger');
-    btnDecline.classList.remove('btn-outline-danger');
-    btnAccept.classList.remove('active', 'btn-success');
-    btnAccept.classList.add('btn-outline-success');
-});
-
-
 document.getElementById('btnSubmit').addEventListener('click', () => {
-    const appId = document.getElementById('appId').value.trim();
-    
-    
+  const appId = document.getElementById('appId').value.trim();
+  
+  const checked = document.getElementById('agree').checked;
+
+  if (!appId) return showError('Application ID လိုအပ်ပါသည်။');
+  if (!checked) return showError('ကျေးဇူးပြု၍ သဘောတူကြောင်း သတ်မှတ်ရန် လိုအပ်ပါသည်။');
   
 
-    // Validation
-    if (!appId) return showError('Application ID လိုအပ်ပါသည်');
-    if (!currentStatus) {
-        return showError('ကျေးဇူးပြု၍ Accept သို့မဟုတ် Decline ကို ရွေးချယ်ပါ ');
-    }
-    
-   
-    
+  const payload = {
+    applicationId: appId,
+    timestamp: new Date().toISOString()
+  };
 
-   
-    const payload = {
-        applicationId: appId,
-        status: currentStatus , 
-        timestamp: new Date().toISOString() 
-    };
-
-    console.log('Submitting payload:', payload);
-    alert(`Form submitted successfully! \nStatus: ${payload.status}`);
-    showError('');
+  console.log('Submitting payload:', payload);
+  alert(`${appId} is submitted form successfully!`);
+  showError('');
 });
 
-
 function showError(msg) {
-    const errorDiv = document.getElementById('error');
-    if(errorDiv) {
-        errorDiv.textContent = msg || '';
-        
-        errorDiv.style.color = 'red'; 
-    } else {
-        console.warn("Error container not found:", msg);
-    }
+  document.getElementById('error').textContent = msg || '';
 }
+
+
 
 
 

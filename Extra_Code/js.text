@@ -108,29 +108,78 @@
 // setInterval(updateDateTime, 1000);
 
 
-// document.getElementById('btnSubmit').addEventListener('click', () => {
-//   const appId = document.getElementById('appId').value.trim();
-//   const signer = document.getElementById('signerName').value.trim();
-//   const checked = document.getElementById('agree').checked;
-
-//   if (!appId) return showError('Application ID လိုအပ်ပါသည်');
-//   if (!checked) return showError('သဘောတူကြောင်း သတ်မှတ်ရန် လိုအပ်သည်');
-//   if (isCanvasBlank(canvas)) return showError('Signature လက်မှတ်မရှိသေးပါ');
-
-//   const payload = {
-//     applicationId: appId,
-//     signerName: signer || null,
-//     date: document.getElementById('dateField').value,
-//     time: document.getElementById('timeField').value,
-//     signatureDataUrl: canvas.toDataURL('image/png')
-//   };
-
-//   console.log('Submitting payload:', payload);
-//   alert('Form submitted (demo). Check console for payload.');
-//   showError('');
-// });
 
 
-// function showError(msg) {
-//   document.getElementById('error').textContent = msg || '';
-// }
+
+
+
+
+let currentStatus = null;
+
+const btnAccept = document.getElementById('btnAccept');
+const btnDecline = document.getElementById('btnDecline');
+const termsCheckbox = document.getElementById('termsCheckbox');
+
+btnAccept.addEventListener('click', () => {
+    currentStatus = 'Accepted';
+    termsCheckbox.checked = true;
+    showError('');
+    
+   
+    btnAccept.classList.add('active', 'btn-success'); 
+    btnAccept.classList.remove('btn-outline-success')
+    btnDecline.classList.remove('active', 'btn-danger');
+    btnDecline.classList.add('btn-outline-danger')
+});
+
+btnDecline.addEventListener('click', () => {
+    currentStatus = 'Declined';
+    termsCheckbox.checked = false;
+    showError('');
+    
+    
+    btnDecline.classList.add('active', 'btn-danger');
+    btnDecline.classList.remove('btn-outline-danger');
+    btnAccept.classList.remove('active', 'btn-success');
+    btnAccept.classList.add('btn-outline-success');
+});
+
+
+document.getElementById('btnSubmit').addEventListener('click', () => {
+    const appId = document.getElementById('appId').value.trim();
+    
+    
+  
+
+    // Validation
+    if (!appId) return showError('Application ID လိုအပ်ပါသည်');
+    if (!currentStatus) {
+        return showError('ကျေးဇူးပြု၍ Accept သို့မဟုတ် Decline ကို ရွေးချယ်ပါ ');
+    }
+    
+   
+    
+
+   
+    const payload = {
+        applicationId: appId,
+        status: currentStatus , 
+        timestamp: new Date().toISOString() 
+    };
+
+    console.log('Submitting payload:', payload);
+    alert(`Form submitted successfully! \nStatus: ${payload.status}`);
+    showError('');
+});
+
+
+function showError(msg) {
+    const errorDiv = document.getElementById('error');
+    if(errorDiv) {
+        errorDiv.textContent = msg || '';
+        
+        errorDiv.style.color = 'red'; 
+    } else {
+        console.warn("Error container not found:", msg);
+    }
+}

@@ -9,6 +9,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      a[aria-expanded="false"] .show-less {
+        display: none;
+      }
+
+      a[aria-expanded="true"] .show-more {
+        display: none;
+      }
+
+      .toggle-link {
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-light">
@@ -35,13 +50,11 @@
             <button id="btnSearch" class="btn btn-primary">Search</button>
           </div>
 
-          <h6 class="fw-bold mt-4 mb-2">
+          <h6 class="fw-bold mt-4 mb-3">
             အသုံးပြုသူ၏ ဝန်ခံကတိများနှင့် အသိအမှတ်ပြုမှုများ
           </h6>
-          <div
-            id="terms"
-            class="border rounded p-3 bg-body-tertiary mb-4 terms shadow-sm"
-          >
+
+          <div class="border rounded p-3 bg-body-tertiary mb-4 terms shadow-sm">
             <p class="fw-normal fs-14 lh-lg">
               လျှောက်ထားသူသည် Knox Guard ဝန်ဆောင်မှုကို နှောင့်ယှက်ခြင်း၊
               ဖယ်ရှားခြင်း သို့မဟုတ် အခြားနည်းလမ်းဖြင့် ကျော်လွှားရန်
@@ -54,14 +67,8 @@
               ကုမ္ပဏီမှ လက်ခံရရှိပြီးမှသာ စက်ပစ္စည်းပိုင်ဆိုင်ခွင့်သည်
               လျှောက်ထားသူထံသို့ လွှဲပြောင်းမည်ဖြစ်သည်။
 
-              <span
-                class.default="collapsed"
-                data-bs-toggle="collapse"
-                href="#fullText"
-              >
-              </span>
-
-              <span class="collapse" id="fullText">
+              <!-- The collapsible content -->
+              <span class="collapse" id="example1">
                 Rent 2 Own MMကုမ္ပဏီသည် လျှောက်ထားသူအား Samsung Knox Guard
                 ဝန်ဆောင်မှုဖြင့် ထိန်းချုပ်ထားသော ကုမ္ပဏီ၏ Pay-As-You-Go (PAYG)
                 စနစ်ဖြင့် Samsung မိုဘိုင်းလ်စက်ပစ္စည်းကို ရောင်းချရန်
@@ -99,56 +106,27 @@
                 တည်ငြိမ်သော အင်တာနက်ချိတ်ဆက်မှု (Wi-Fi သို့မဟုတ် မိုဘိုင်းဒေတာ)
                 လိုအပ်ကြောင်း အသုံးပြုသူမှ အသိအမှတ်ပြုပါသည်။
               </span>
-
-              <br />
-              <a
-                data-bs-toggle="collapse"
-                href="#fullText"
-                role="button"
-                aria-expanded="false"
-                aria-controls="fullText"
-              >
-                See More
-              </a>
             </p>
+
+            <!-- The Controller Link -->
+            <a
+              class="toggle-link"
+              data-bs-toggle="collapse"
+              href="#example1"
+              role="button"
+              aria-expanded="false"
+              aria-controls="example1"
+            >
+              <span class="show-more">See More...</span>
+              <span class="show-less">See Less...</span>
+            </a>
           </div>
 
           <!-- Button Accept & Deline -->
-          <div class="d-flex justify-content-center gap-3 my-4">
-            <input
-              type="radio"
-              class="btn-check"
-              name="decision"
-              id="btnAccept"
-              autocomplete="off"
-            />
-            <label
-              class="btn btn-outline-success btn-md btn-custom-width"
-              for="btnAccept"
-              >Accept</label
-            >
-
-            <input
-              type="radio"
-              class="btn-check"
-              name="decision"
-              id="btnDecline"
-              autocomplete="off"
-            />
-            <label
-              class="btn btn-outline-danger btn-md btn-custom-width"
-              for="btnDecline"
-              >Decline</label
-            >
-          </div>
 
           <div class="form-check mt-4">
-            <input
-              id="termsCheckbox"
-              type="checkbox"
-              class="form-check-input"
-            />
-            <label for="termsCheckbox" class="form-check-label">
+            <input id="agree" type="checkbox" class="form-check-input" />
+            <label for="agree" class="form-check-label">
               အထက်ပါစည်းကမ်းနှင့် သတ်မှတ်ချက်များအားလုံးကို
               ဖတ်ရှုနားလည်ပြီးဖြစ်ကြောင်း အသိအမှတ်ပြုပါသည်။ အထက်တွင်
               အသေးစိတ်ဖော်ပြထားသည့်အတိုင်း၊ ငွေပေးချေမှု တစ် (၁) ရက်
@@ -160,7 +138,9 @@
 
           <div class="d-flex justify-content-between align-items-center mt-3">
             <div id="error" class="text-danger small"></div>
-            <button id="btnSubmit" class="btn btn-primary">Submit</button>
+            <button id="btnSubmit" class="btn btn-outline-success btn-md">
+              Accept
+            </button>
           </div>
         </div>
       </div>
