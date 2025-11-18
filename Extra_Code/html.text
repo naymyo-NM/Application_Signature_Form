@@ -1,0 +1,54 @@
+          <!-- Signature area -->
+          <!-- <div class="row g-4">
+            <div class="col-lg-3">
+              <label class="form-label fw-semibold">လျှောက်ထားသူ</label>
+
+              <canvas
+                id="sigCanvas"
+                width="300"
+                height="220"
+                class="w-100 border rounded"
+                aria-label="Signature canvas"
+              ></canvas>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <button
+                  id="clearBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Clear
+                </button>
+                <button
+                  id="undoBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Undo
+                </button>
+                <button
+                  id="redoBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Redo
+                </button>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-5">
+              <label class="form-label fw-semibold">လျှောက်ထားသူ အမည်</label>
+              <input
+                id="signerName"
+                type="text"
+                class="form-control mb-3"
+                value=""
+              />
+              <label class="form-label fw-semibold">ရက်စွဲ</label>
+              <input
+                id="dateField"
+                type="text"
+                class="form-control mb-3"
+                readonly
+              />
+            </div>
+          </div> -->

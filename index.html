@@ -113,71 +113,49 @@
             </p>
           </div>
 
-          <!-- Signature area -->
-          <div class="row g-4">
-            <div class="col-lg-3">
-              <label class="form-label fw-semibold">လျှောက်ထားသူ</label>
+          <!-- Button Accept & Deline -->
+          <div class="d-flex justify-content-center gap-3 my-4">
+            <input
+              type="radio"
+              class="btn-check"
+              name="decision"
+              id="btnAccept"
+              autocomplete="off"
+            />
+            <label
+              class="btn btn-outline-success btn-md btn-custom-width"
+              for="btnAccept"
+              >Accept</label
+            >
 
-              <canvas
-                id="sigCanvas"
-                width="300"
-                height="220"
-                class="w-100 border rounded"
-                aria-label="Signature canvas"
-              ></canvas>
-              <div class="mt-2 d-flex gap-2 flex-wrap">
-                <button
-                  id="clearBtn"
-                  type="button"
-                  class="btn btn-outline-secondary btn-sm"
-                >
-                  Clear
-                </button>
-                <button
-                  id="undoBtn"
-                  type="button"
-                  class="btn btn-outline-secondary btn-sm"
-                >
-                  Undo
-                </button>
-                <button
-                  id="redoBtn"
-                  type="button"
-                  class="btn btn-outline-secondary btn-sm"
-                >
-                  Redo
-                </button>
-              </div>
-            </div>
-
-            <div class="col-lg-4 mt-5">
-              <label class="form-label fw-semibold">လျှောက်ထားသူ အမည်</label>
-              <input
-                id="signerName"
-                type="text"
-                class="form-control mb-3"
-                value=""
-              />
-              <label class="form-label fw-semibold">ရက်စွဲ</label>
-              <input
-                id="dateField"
-                type="text"
-                class="form-control mb-3"
-                readonly
-              />
-            </div>
+            <input
+              type="radio"
+              class="btn-check"
+              name="decision"
+              id="btnDecline"
+              autocomplete="off"
+            />
+            <label
+              class="btn btn-outline-danger btn-md btn-custom-width"
+              for="btnDecline"
+              >Decline</label
+            >
           </div>
 
           <div class="form-check mt-4">
-            <input id="agree" type="checkbox" class="form-check-input" />
-            <label for="agree" class="form-check-label"
-              >အထက်ပါစည်းကမ်းနှင့် သတ်မှတ်ချက်များအားလုံးကို
+            <input
+              id="termsCheckbox"
+              type="checkbox"
+              class="form-check-input"
+            />
+            <label for="termsCheckbox" class="form-check-label">
+              အထက်ပါစည်းကမ်းနှင့် သတ်မှတ်ချက်များအားလုံးကို
               ဖတ်ရှုနားလည်ပြီးဖြစ်ကြောင်း အသိအမှတ်ပြုပါသည်။ အထက်တွင်
               အသေးစိတ်ဖော်ပြထားသည့်အတိုင်း၊ ငွေပေးချေမှု တစ် (၁) ရက်
               နောက်ကျသည်နှင့် တပြိုင်နက် စက်ပစ္စည်း၏ လုပ်ဆောင်နိုင်စွမ်းကို
               အဝေးမှ ကန့်သတ်နိုင်သည့် Samsung Knox Guard ဝန်ဆောင်မှုပါဝင်သော
-              မိုဘိုင်းလ်စက်ပစ္စည်းကို ဝယ်ယူရန် သဘောတူပါသည်။</label
-            >
+              မိုဘိုင်းလ်စက်ပစ္စည်းကို ဝယ်ယူရန် သဘောတူပါသည်။
+            </label>
           </div>
 
           <div class="d-flex justify-content-between align-items-center mt-3">
