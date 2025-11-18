@@ -149,3 +149,34 @@ function showError(msg) {
 
 
 
+// document.getElementById("btnSearch").addEventListener("click", async function () {
+//     const appId = document.getElementById("appId").value.trim();
+
+//     if (!appId) {
+//         alert("Please enter Application ID");
+//         return;
+//     }
+
+//     try {
+//         // Example: Replace with your real API endpoint
+//         const response = await fetch(`https://your-api.com/applications/${appId}`);
+
+//         if (response.ok) {
+//             // Application ID FOUND
+//             window.location.href = "success.html"; 
+//         } else if (response.status === 404) {
+//             // Application ID NOT FOUND
+//             window.location.href = "not-found.html";
+//         } else {
+//             alert("Something went wrong. Please try again.");
+//         }
+
+//     } catch (error) {
+//         console.error(error);
+//         alert("Network error");
+//     }
+// });
+
+
+
+

@@ -1,78 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="my">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Application Signature Form</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="bg-light  ">
-  <div class="container py-4 ">
-    <div class="card shadow-lg rounded">
-      <div class="card-body">
-        <div class="mb-5 mt-3">
-          <img src="./assets/logo_r2o.png" alt="logo" height="40">
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Application Signature Form</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container py-4">
+      <div class="card shadow-lg rounded">
+        <div class="card-body">
+          <div class="mb-5 mt-3">
+            <img src="./assets/logo_r2o.png" alt="logo" height="40" />
+          </div>
 
-        <!-- Application ID -->
-          
-        <label class="form-label" for="appId">Application ID ဖြင့်ရှာဖွေရန်</label>
-        <div class="input-group mb-3">
-          <input id="appId" type="text" class="form-control" placeholder="Application ID" value="">
-          <button id="btnSearch" class="btn btn-primary">Search</button>
-        </div>
-        
+          <!-- Application ID -->
 
-        <h6 class="fw-bold mt-4 mb-2">သက်ဆိုင်ရာ အချက်အလက်များနှင့် သဘောတူချက်များ</h6>
-        <div id="terms" class="border rounded p-3 bg-body-tertiary mb-4 terms">
-         
-          (၁) စာချုပ်၏ အချက်များ၊ (၂) အာမခံချက်များနှင့် (၃) အခြား အချက်များစသည်ဖြင့် အပြည့်အဝ ဖတ်ရှုပါ။<br><br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nisl nec metus gravida convallis.<br><br>
-         
-        </div>
+          <label class="form-label" for="appId"
+            >Application ID ဖြင့်ရှာဖွေရန်</label
+          >
+          <div class="input-group mb-3">
+            <input
+              id="appId"
+              type="text"
+              class="form-control"
+              placeholder="Application ID"
+              value=""
+            />
+            <button id="btnSearch" class="btn btn-primary">Search</button>
+          </div>
 
-        <!-- Signature area -->
-        <div class="row g-4">
-          <div class="col-lg-3">
-            <label class="form-label fw-semibold">လျှောက်ထားသူ</label>
-           
-              <canvas id="sigCanvas" width="330" height="220" class="w-100 border rounded" aria-label="Signature canvas"></canvas>
+          <h6 class="fw-bold mt-4 mb-2">
+            အသုံးပြုသူ၏ ဝန်ခံကတိများနှင့် အသိအမှတ်ပြုမှုများ
+          </h6>
+          <div
+            id="terms"
+            class="border rounded p-3 bg-body-tertiary mb-4 terms shadow-sm"
+          >
+            <p class="fw-normal fs-14 lh-lg">
+              လျှောက်ထားသူသည် Knox Guard ဝန်ဆောင်မှုကို နှောင့်ယှက်ခြင်း၊
+              ဖယ်ရှားခြင်း သို့မဟုတ် အခြားနည်းလမ်းဖြင့် ကျော်လွှားရန်
+              ကြိုးပမ်းခြင်း မပြုရန် ဝန်ခံကတိပြုပါသည်။ ထိုသို့
+              ကြိုးပမ်းမှုမှန်သမျှသည် ဤသဘောတူညီချက်ကို သိသိသာသာ
+              ချိုးဖောက်ခြင်းဖြစ်ပြီး၊ ကုမ္ပဏီ၏ ဆုံးဖြတ်ချက်အရ ကျန်ရှိသော
+              လက်ကျန်ငွေ အပြည့်,အစုံကို ချက်ချင်းတောင်းဆိုနိုင်သည်။
+              အရစ်ကျအစီအစဉ်အရ ပေးဆောင်ရမည့် ငွေများနှင့် သက်ဆိုင်ရာ
+              အခကြေးငွေများ သို့မဟုတ် ဒဏ်ကြေးများ အပါအဝင် ငွေပေးချေမှုအားလုံးကို
+              ကုမ္ပဏီမှ လက်ခံရရှိပြီးမှသာ စက်ပစ္စည်းပိုင်ဆိုင်ခွင့်သည်
+              လျှောက်ထားသူထံသို့ လွှဲပြောင်းမည်ဖြစ်သည်။
+
+              <span
+                class.default="collapsed"
+                data-bs-toggle="collapse"
+                href="#fullText"
+              >
+              </span>
+
+              <span class="collapse" id="fullText">
+                Rent 2 Own MMကုမ္ပဏီသည် လျှောက်ထားသူအား Samsung Knox Guard
+                ဝန်ဆောင်မှုဖြင့် ထိန်းချုပ်ထားသော ကုမ္ပဏီ၏ Pay-As-You-Go (PAYG)
+                စနစ်ဖြင့် Samsung မိုဘိုင်းလ်စက်ပစ္စည်းကို ရောင်းချရန်
+                သဘောတူပြီး၊ လျှောက်ထားသူသည် ရွေးချယ်ထားသော ငွေပေးချေမှုအစီအစဉ်
+                (၆၊ ၉၊ သို့မဟုတ် ၁၂ လ) နှင့် ဤသဘောတူညီချက်၏
+                စည်းကမ်းချက်များအတိုင်း စက်ပစ္စည်းကို ဝယ်ယူရန် သဘောတူပါသည်။
+                လျှောက်ထားသူရွေးချယ်ထားသောSamsung မိုဘိုင်းလ်စက်ပစ္စည်းအား
+                Samsung Knox Guard ဝန်ဆောင်မှု ကို ကြိုတင်ထည့်သွင်းပြီး
+                ရောင်းချပါသည်။ ဤဝန်ဆောင်မှုသည် Rent 2 Own MM အစီအစဉ်၏ မရှိမဖြစ်
+                အစိတ်အပိုင်းတစ်ခုဖြစ်ပြီး လျှောက်ထားသူ၏ ငွေပေးချေမှုအခြေအနေပေါ်
+                မူတည်၍ စက်ပစ္စည်းကို စီမံခန့်ခွဲရန် ကုမ္ပဏီအား
+                လုပ်ပိုင်ခွင့်ပေးကြောင်း လျှောက်ထားသူမှ သဘောတူပါသည်။
+                အသုံးပြုသူသည် ရွေးချယ်ထားသော ငွေပေးချေမှုအစီအစဉ်အရ သတ်မှတ်ထားသော
+                လစဉ်အရစ်ကျပမာဏကို ကုမ္ပဏီသို့ ပေးချေရမည်။ ငွေပေးချေမှုအားလုံးကို
+                လစဉ်သတ်မှတ်ထားသော ရက် သို့မဟုတ် ထိုရက်မတိုင်မီ ပေးချေရမည်။
+                သတ်မှတ်ထားသော နောက်ဆုံးရက်၏ ည ၁၁:၅၉ နာရီ (မြန်မာစံတော်ချိန်)
+                တွင် ငွေအပြည့်အဝ မရရှိပါက ပျက်ကွက်သည်ဟု ယူဆမည်။ မည်သည့်
+                ဆိုင်းငံ့ကာလကိုမျှ ခွင့်ပြုမည် မဟုတ်ပါ။ လစဉ်အရစ်ကျငွေကို
+                သတ်မှတ်ထားသော နောက်ဆုံးရက်တွင် မပေးချေပါက လျှောက်ထားသူသည်
+                "ပျက်ကွက်" သည်ဟု သတ်မှတ်ပါသည်။ ပျက်ကွက်သည့် အခြေအနေ ဖြစ်ပေါ်ပါက၊
+                ကုမ္ပဏီသည် Knox Guard မှတစ်ဆင့် စက်ပစ္စည်းကို ချက်ချင်းနှင့်
+                ကြိုတင်အသိပေးခြင်းမရှိဘဲ အဝေးမှ ကန့်သတ်မည်ဖြစ်သည်။
+                ကန့်သတ်ခံထားရသော စက်ပစ္စည်းသည် ၎င်း၏ အဓိကလုပ်ဆောင်ချက်များ
+                ပိတ်ထားမည်ဖြစ်သည်။ အသုံးပြုသူသည် အရေးပေါ်ခေါ်ဆိုမှုများကိုသာ
+                သုံးစွဲနိုင်မည်ဖြစ်သည်။ အခြား အပလီကေးရှင်းများ၊
+                ဒေတာအသုံးပြုမှုနှင့် အရေးပေါ်မဟုတ်သော ဆက်သွယ်မှုများအားလုံးကို
+                သုံးစွဲနိုင်မည် မဟုတ်ပါ။ စက်ပစ္စည်း၏ လုပ်ဆောင်နိုင်စွမ်းကို
+                ပြန်လည်ရရှိရန်၊ အသုံးပြုသူသည် ကုမ္ပဏီသို့ အောက်ပါတို့ကို
+                ပေးချေရမည်: (က) ပေးချေရန် ကျန်ရှိသော အရစ်ကျငွေများအားလုံး၊ နှင့်
+                (ခ) ငွေပေးချေမှု စာမျက်နှာမှတစ်ဆင့် သိရှိနိုင်သော ကုမ္ပဏီမှ
+                သတ်မှတ်ထားသော "ဒဏ်ကြေးငွေ"။ ပေးချေရန်ကျန်ရှိသော ငွေများနှင့်
+                ဒဏ်ကြေးများအားလုံးကို လက်ခံရရှိကြောင်း အတည်ပြုပြီးပါက၊
+                ကုမ္ပဏီသည် စက်ပစ္စည်းကို ပြန်လည်အသက်သွင်းရန် အဝေးမှ
+                အမိန့်ပေးပို့မည်ဖြစ်သည်။ စက်ပစ္စည်းသည် ဤအမိန့်ကို လက်ခံရရှိရန်
+                တည်ငြိမ်သော အင်တာနက်ချိတ်ဆက်မှု (Wi-Fi သို့မဟုတ် မိုဘိုင်းဒေတာ)
+                လိုအပ်ကြောင်း အသုံးပြုသူမှ အသိအမှတ်ပြုပါသည်။
+              </span>
+
+              <br />
+              <a
+                data-bs-toggle="collapse"
+                href="#fullText"
+                role="button"
+                aria-expanded="false"
+                aria-controls="fullText"
+              >
+                See More
+              </a>
+            </p>
+          </div>
+
+          <!-- Signature area -->
+          <div class="row g-4">
+            <div class="col-lg-3">
+              <label class="form-label fw-semibold">လျှောက်ထားသူ</label>
+
+              <canvas
+                id="sigCanvas"
+                width="300"
+                height="220"
+                class="w-100 border rounded"
+                aria-label="Signature canvas"
+              ></canvas>
               <div class="mt-2 d-flex gap-2 flex-wrap">
-                <button id="clearBtn" type="button" class="btn btn-outline-secondary btn-sm">Clear</button>
-                <button id="undoBtn" type="button" class="btn btn-outline-secondary btn-sm">Undo</button>
-                <button id="redoBtn" type="button" class="btn btn-outline-secondary btn-sm">Redo</button>
+                <button
+                  id="clearBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Clear
+                </button>
+                <button
+                  id="undoBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Undo
+                </button>
+                <button
+                  id="redoBtn"
+                  type="button"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  Redo
+                </button>
               </div>
-            
-            
+            </div>
+
+            <div class="col-lg-4 mt-5">
+              <label class="form-label fw-semibold">လျှောက်ထားသူ အမည်</label>
+              <input
+                id="signerName"
+                type="text"
+                class="form-control mb-3"
+                value=""
+              />
+              <label class="form-label fw-semibold">ရက်စွဲ</label>
+              <input
+                id="dateField"
+                type="text"
+                class="form-control mb-3"
+                readonly
+              />
+            </div>
           </div>
 
-          <div class="col-lg-4">
-            <label class="form-label fw-semibold">လျှောက်ထားသူ အမည်</label>
-            <input id="signerName" type="text" class="form-control mb-3"  value="">
-            <label class="form-label fw-semibold">ရက်စွဲ</label>
-            <input id="dateField" type="text" class="form-control mb-3" readonly>
-            <label class="form-label fw-semibold">အချိန်</label>
-            <input id="timeField" type="text" class="form-control" readonly>
+          <div class="form-check mt-4">
+            <input id="agree" type="checkbox" class="form-check-input" />
+            <label for="agree" class="form-check-label"
+              >အထက်ပါစည်းကမ်းနှင့် သတ်မှတ်ချက်များအားလုံးကို
+              ဖတ်ရှုနားလည်ပြီးဖြစ်ကြောင်း အသိအမှတ်ပြုပါသည်။ အထက်တွင်
+              အသေးစိတ်ဖော်ပြထားသည့်အတိုင်း၊ ငွေပေးချေမှု တစ် (၁) ရက်
+              နောက်ကျသည်နှင့် တပြိုင်နက် စက်ပစ္စည်း၏ လုပ်ဆောင်နိုင်စွမ်းကို
+              အဝေးမှ ကန့်သတ်နိုင်သည့် Samsung Knox Guard ဝန်ဆောင်မှုပါဝင်သော
+              မိုဘိုင်းလ်စက်ပစ္စည်းကို ဝယ်ယူရန် သဘောတူပါသည်။</label
+            >
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <div id="error" class="text-danger small"></div>
+            <button id="btnSubmit" class="btn btn-primary">Submit</button>
           </div>
         </div>
-
-        <div class="form-check mt-4">
-          <input id="agree" type="checkbox" class="form-check-input">
-          <label for="agree" class="form-check-label">အထက်ပါအချက်များကို သဘောတူလက်ခံပါသည်။</label>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center mt-3">
-          <div id="error" class="text-danger small"></div>
-          <button id="btnSubmit" class="btn btn-primary">Submit</button>
-        </div>
-    
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
