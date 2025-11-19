@@ -24,11 +24,12 @@ document.getElementById('btnSubmit').addEventListener('click', () => {
 
   const payload = {
     applicationId: appId,
+    checked: true,
     timestamp: new Date().toISOString()
   };
 
   console.log('Submitting payload:', payload);
-  alert(`appId: ${appId} is submitted form successfully!`);
+  alert(`Form submitted successfully for appId: ${appId}`);
   showError('');
 });
 
